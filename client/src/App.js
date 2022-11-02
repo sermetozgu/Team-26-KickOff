@@ -42,49 +42,6 @@ function App() {
     });
     setNewUser("")
   };
-
-  return (
-    <div className="App">
-      <div className="information">
-        <label>Username:</label>
-        <input
-          type="text"
-          onChange={(event) => {
-            setUsername(event.target.value);
-          } } />
-        <label>Password:</label>
-        <input
-          type="text"
-          onChange={(event) => {
-            setPassword(event.target.value);
-          } } />
-        <button onClick={addUser}>Add User</button>
-      </div>
-      <div className="users">
-        <button onClick={getUsers}>Show Users</button>
-
-        {userList.map((val, key) => {
-          return (
-            <div className='user'> 
-              <h1>Username: {val.username}</h1>
-              <p>Password:{val.password}</p>
-              <p>UserId: {val.id}</p>
-
-              <button onClick={() => {deleteUser(val.username)}}>Delete</button>
-              <input type="text" id="updateInput" onChange={(event) => {
-                setNewUser(event.target.value)
-              }}/>
-              <button onClick={() => {updateUser(val.username)}}>Update</button>
-              
-            </div>
-          );
-        })}
-      </div>
-    </div>
-
-    
-
-  );
 }
 
 export default App;
