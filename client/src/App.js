@@ -7,7 +7,7 @@ function App() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [userList, setUserList] = useState([]);
-  const [newUser, setNewUser] = useState("");
+  const [newPassword, setNewPassword] = useState("");
 
   const addUser = () => {
     Axios.post("http://localhost:3001/create", {
@@ -38,9 +38,10 @@ function App() {
 
   const updateUser = (username) => {
     Axios.put("http://localhost:3001/update", {
-      username: newUser,
+      username: username,
+      password: newPassword,
     });
-    setNewUser("")
+    setNewPassword("")
   };
 
   return (
@@ -72,7 +73,7 @@ function App() {
 
               <button onClick={() => {deleteUser(val.username)}}>Delete</button>
               <input type="text" id="updateInput" onChange={(event) => {
-                setNewUser(event.target.value)
+                setNewPassword(event.target.value)
               }}/>
               <button onClick={() => {updateUser(val.username)}}>Update</button>
               

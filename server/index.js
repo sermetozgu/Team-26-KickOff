@@ -59,10 +59,15 @@ app.delete("/delete/:username", (req, res) => {
 
 app.put("/update", (req, res) => {
     const username = req.body.username
-    const sqlUpdate = "UPDATE users SET username = ? WHERE username = ?";
+    const password = req.body.password
+    const sqlUpdate = "UPDATE users SET password = ? WHERE username = ?";
 
-    db.query(sqlUpdate, username, (err, result) => {
-        if (err)console.log(err);
+    db.query(sqlUpdate, [password, username], (err, result) => {
+        if (err){
+            console.log(err);
+        } else {
+            console.log(password, username);
+        }
     })
 
 });
