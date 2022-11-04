@@ -1,0 +1,41 @@
+.users {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .user {
+    width: 400px;
+    height: 350px;
+    background-color: lightgrey;
+    border: 1px solid black;
+    border-radius: 15px;
+    margin: 10px;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .user h3 {
+    margin: 20px;
+  }
+  
+  #updateInput {
+    width: 200px;
+    height: 20px;
+    margin: 8px;
+  }
+
+  .Delete{
+    margin: 8px;
+    width: 200px;
+
+  }
+
+  .Update{
+    margin: 8px;
+    width: 200px;
+
+  }
